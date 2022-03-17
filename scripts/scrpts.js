@@ -1,3 +1,4 @@
+// ------------- Burguer ------------- 
 const navSlide = () => {
     const burguer = document.querySelector('.burguer');
     const nav = document.querySelector('.nav-links');
@@ -21,5 +22,20 @@ const navSlide = () => {
     });
 }
 
-    navSlide();
-   
+navSlide();
+
+// ------------- List nav ------------- 
+let listElements = document.querySelectorAll('.click');
+listElements.forEach(listElement => {
+    listElement.addEventListener('click', (e)=>{
+        e.preventDefault()
+        let height = 0;
+        let menu = listElement.nextElementSibling;
+        if(menu.clientHeight == "0"){
+            height=menu.scrollHeight;
+        }
+
+        menu.style.height = `${height}px`;
+
+    })
+});
